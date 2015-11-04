@@ -1,4 +1,4 @@
-# ceshire-cat
+# cheshire-cat
 
 FIXME
 
