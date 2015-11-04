@@ -3,7 +3,8 @@
   (:require [clojure.browser.repl :as repl]
             [cljs-http.client :as http]
             [cljs.core.async :refer [<!]]
-            [enfocus.core :as ef]))
+            [enfocus.core :as ef]
+            [enfocus.events :as ev]))
 
 (enable-console-print!)
 
@@ -14,5 +15,6 @@
      (ef/at "#cat-name" (ef/content (:name body))
             "#status" (ef/do->
                        (ef/content (:status body))
-                       (ef/set-style :font-size "500%"))))))
+                       (ef/set-style :font-size "500%")))
+     (ef/at "#button1" (ev/listen :click #(js/alert "Goodbye!"))))))
 
